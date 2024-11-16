@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = 3000;
+app.use(express_1.default.json());
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
@@ -14,4 +15,10 @@ app.get('/hello', (req, res) => {
 });
 app.get('/echo/:id', (req, res) => {
     res.json(req.params);
+});
+app.post('/sum', (req, res) => {
+    let numbersArr = req.body.numbers;
+    let sum = 0;
+    numbersArr.forEach((element) => sum = sum + element);
+    res.json({ sum: sum });
 });
