@@ -8,5 +8,5 @@ app.listen(port, () => {
 })
 
 app.get('/hello', (req, res) => {
-    res.send('Hello World!')
+    res.json({ msg: "Hello world!" })
 })
