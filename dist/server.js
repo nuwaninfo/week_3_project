@@ -12,3 +12,6 @@ app.listen(port, () => {
 app.get('/hello', (req, res) => {
     res.json({ msg: "Hello world!" });
 });
+app.get('/echo/:id', (req, res) => {
+    res.json(req.params);
+});
