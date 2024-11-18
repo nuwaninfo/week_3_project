@@ -36,10 +36,11 @@ let totalUserCount: number = 0
 app.post('/users', (req: Request, res: Response)=>{
     let userCount: number = 0
     userCount = myUser.push(req.body)
-    totalUserCount = totalUserCount + userCount
+    res.json({"message ": "User successfully added"})
+    /*totalUserCount = totalUserCount + userCount
     if (totalUserCount > userCount) {
-        res.json({'sum': "User successfully added"})
-    }
+        res.json({"message ": "User successfully added"})
+    }*/
     console.log(myUser)
 })
 
