@@ -23,5 +23,5 @@ app.post('/sum', (req: Request, res: Response)=>{
     numbersArr.forEach((element) =>
         sum = sum + element
    )
-    res.json({sum: sum})
+    res.json({'sum': sum})
 })

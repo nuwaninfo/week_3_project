@@ -20,5 +20,5 @@ app.post('/sum', (req, res) => {
     let numbersArr = req.body.numbers;
     let sum = 0;
     numbersArr.forEach((element) => sum = sum + element);
-    res.json({ sum: sum });
+    res.json({ 'sum': sum });
 });
