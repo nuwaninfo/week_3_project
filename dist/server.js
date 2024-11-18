@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.use(express_1.default.json());
@@ -22,3 +23,4 @@ app.post('/sum', (req, res) => {
     numbersArr.forEach((element) => sum = sum + element);
     res.json({ 'sum': sum });
 });
+app.use(express_1.default.static(path_1.default.join(__dirname, "../public")));

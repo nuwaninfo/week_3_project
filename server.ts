@@ -1,4 +1,5 @@
 import express, {Request, Response, Express} from "express"
+import path from "path"
 
 const app: Express = express()
 const port: number = 3000
@@ -25,3 +26,5 @@ app.post('/sum', (req: Request, res: Response)=>{
    )
     res.json({'sum': sum})
 })
+
+app.use(express.static(path.join(__dirname, "../public")))
