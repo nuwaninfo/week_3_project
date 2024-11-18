@@ -24,8 +24,14 @@ app.post('/sum', (req, res) => {
     res.json({ 'sum': sum });
 });
 let myUser = [];
-app.post('/user', (req, res) => {
-    myUser.push(req.body);
+let totalUserCount = 0;
+app.post('/users', (req, res) => {
+    let userCount = 0;
+    userCount = myUser.push(req.body);
+    totalUserCount = totalUserCount + userCount;
+    if (totalUserCount > userCount) {
+        res.json({ 'sum': "User successfully added" });
+    }
     console.log(myUser);
 });
 app.use(express_1.default.static(path_1.default.join(__dirname, "../public")));

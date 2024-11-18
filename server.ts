@@ -32,10 +32,14 @@ type TUser = {
     email: string
 }
 let myUser: Array<TUser> = []
-
-app.post('/user', (req: Request, res: Response)=>{
-   
-    myUser.push(req.body)
+let totalUserCount: number = 0
+app.post('/users', (req: Request, res: Response)=>{
+    let userCount: number = 0
+    userCount = myUser.push(req.body)
+    totalUserCount = totalUserCount + userCount
+    if (totalUserCount > userCount) {
+        res.json({'sum': "User successfully added"})
+    }
     console.log(myUser)
 })
 

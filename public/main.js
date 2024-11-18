@@ -9,7 +9,7 @@ submitButton.addEventListener("click", async function() {
         email: email
     };
 
-    const userData = await fetch("http://localhost:3000/user", {
+    const userData = await fetch("http://localhost:3000/users", {
         method: "post",
         headers: {
             "Content-type": "application/json"
