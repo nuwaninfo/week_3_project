@@ -23,4 +23,9 @@ app.post('/sum', (req, res) => {
     numbersArr.forEach((element) => sum = sum + element);
     res.json({ 'sum': sum });
 });
+let myUser = [];
+app.post('/user', (req, res) => {
+    myUser.push(req.body);
+    console.log(myUser);
+});
 app.use(express_1.default.static(path_1.default.join(__dirname, "../public")));

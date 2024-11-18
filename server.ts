@@ -27,4 +27,17 @@ app.post('/sum', (req: Request, res: Response)=>{
     res.json({'sum': sum})
 })
 
+type TUser = {
+    name: string,
+    email: string
+}
+let myUser: Array<TUser> = []
+
+app.post('/user', (req: Request, res: Response)=>{
+   
+    myUser.push(req.body)
+    console.log(myUser)
+})
+
+
 app.use(express.static(path.join(__dirname, "../public")))
